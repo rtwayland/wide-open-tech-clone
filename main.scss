@@ -1,6 +1,9 @@
 $color-green-highlight: #bdd436;
 $color-orange-highlight: #ff803a;
-$color-text: #6A787C;
+$color-text-dark: #40666d;
+$color-text-medium: #6A787C;
+$color-text-light: #858585;
+$bg-color-dark: lighten($color-text-medium, 50%);
 
 * {
     box-sizing: border-box;
@@ -108,14 +111,14 @@ nav {
     text-transform: uppercase;
     font-weight: 100;
     padding: 50px 30px;
-    background-color: lighten($color-text, 50%);
-    color: $color-text;
+    background-color: $bg-color-dark;
 
     p {
         font-size: 20px;
         max-width: 780px;
         margin: auto;
         line-height: 30px;
+        color: $color-text-medium;
     }
 
     .icon-container {
@@ -126,6 +129,7 @@ nav {
     h2 {
         font-size: 2em;
         margin: 0;
+        color: $color-text-dark;
 
         span {
             color: $color-green-highlight;
@@ -146,8 +150,8 @@ nav {
         text-align: center;
         @media screen and (min-width: 992px) {
             &:nth-child(2) {
-                border-left: 1px solid $color-text;
-                border-right: 1px solid $color-text;
+                border-left: 1px solid $color-text-light;
+                border-right: 1px solid $color-text-light;
             }
         }
         @media screen and (max-width: 991px) {
@@ -161,6 +165,10 @@ nav {
             width: 90%;
             margin: auto;
             min-height: 85px;
+            color: $color-text-light;
+            font-size: 1.1em;
+            line-height: 25px;
+            font-weight: 100;
         }
     }
 
@@ -182,8 +190,216 @@ nav {
             text-decoration: none;
 
             &:hover {
-                color: $color-text;
+                color: $color-text-light;
             }
         }
+    }
+}
+/* HOW CAN WE HELP */
+.how-can-we-help {
+    background-color: $bg-color-dark;
+    padding: 50px 30px;
+    text-align: center;
+
+    h2,
+    h3,
+    h5 {
+        color: $color-text-dark;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 2em;
+        margin: 0;
+
+        span {
+            color: $color-green-highlight;
+        }
+    }
+
+    h5 {
+        font-size: 1.3em;
+        font-weight: 500;
+        margin: 5px auto 60px;
+    }
+    @media screen and (min-width: 992px) {
+        white-space: nowrap;
+
+        .left-container,
+        .right-container {
+            white-space: normal;
+            display: inline-block;
+            width: 50%;
+            vertical-align: top;
+        }
+
+        .left-container {
+            padding-right: 10px;
+
+            .box {
+                float: right;
+            }
+        }
+
+        .right-container {
+            padding-left: 10px;
+
+            .box {
+                float: left;
+            }
+        }
+    }
+
+    .box {
+        background-color: white;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        margin-bottom: 15px;
+
+        h3 {
+            font-weight: 500;
+            font-size: 1.5em;
+        }
+
+        p {
+            color: $color-text-light;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .contact-button {
+        width: 185px;
+        height: 50px;
+        margin: 50px auto auto;
+        background-color: $color-green-highlight;
+        border-radius: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        @media screen and (max-width: 480px) {
+            width: 90%;
+        }
+    }
+}
+/* COMPANIES */
+.companies {
+    overflow: auto;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 2em;
+        margin: 40px auto;
+        color: $color-text-dark;
+        text-align: center;
+    }
+
+    .bussiness-images {
+        .company-box {
+            position: relative;
+            float: left;
+            width: calc(100%/3);
+            @media screen and (max-width: 991px) {
+                width: calc(100%/2);
+            }
+            @media screen and (max-width: 767px) {
+                display: block;
+                width: 100%;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            &:hover {
+                .overlay {
+                    opacity: 1;
+                }
+            }
+
+            .overlay {
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0, 0.7);
+                transition: all 0.5s;
+
+                .description {
+                    position: absolute;
+                    width: 100%;
+                    color: white;
+                    text-align: center;
+                    padding: 20px;
+                    font-weight: 100;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}
+
+.email-section {
+    background-color: $color-text-dark;
+    color: white;
+    padding: 50px;
+    overflow: auto;
+
+    .line {
+        width: 50px;
+        height: 5px;
+        background-color: $color-green-highlight;
+    }
+
+    .email-button {
+        width: 150px;
+        height: 50px;
+        margin: 20px auto auto;
+        background-color: $color-green-highlight;
+        border-radius: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    @media screen and (min-width: 991px) {
+        .email-button {
+            float: right;
+        }
+
+        .text-container {
+            float: left;
+        }
+    }
+}
+
+.locations {
+    .location-box {
+        position: relative;
+        float: left;
+        width: 50%;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .address-box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background-color: rgba(19,32,35, 0.7);
+            border-radius: 5px;
+            padding: 30px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        display: none;
     }
 }
