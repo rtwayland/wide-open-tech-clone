@@ -149,7 +149,6 @@ nav .links ul li {
   white-space: normal;
   display: inline-block;
   width: calc(100%/3);
-  min-height: 350px;
   vertical-align: top;
   text-align: center;
 }
@@ -170,15 +169,10 @@ nav .links ul li {
   }
 }
 
-@media screen and (max-width: 545px) {
-  .three-topics .topic-box {
-    min-height: 425px;
-  }
-}
-
 .three-topics .topic-box p {
   width: 90%;
   margin: auto;
+  min-height: 85px;
 }
 
 .three-topics .icon-container {
@@ -192,10 +186,7 @@ nav .links ul li {
 }
 
 .three-topics .link-container {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  padding-top: 10px;
 }
 
 .three-topics .link-container a {

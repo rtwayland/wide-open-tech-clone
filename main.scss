@@ -142,7 +142,6 @@ nav {
         white-space: normal;
         display: inline-block;
         width: calc(100%/3);
-        min-height: 350px;
         vertical-align: top;
         text-align: center;
         @media screen and (min-width: 992px) {
@@ -157,13 +156,11 @@ nav {
             width: 50%;
             margin-bottom: 80px;
         }
-        @media screen and (max-width: 545px) {
-            min-height: 425px;
-        }
 
         p {
             width: 90%;
             margin: auto;
+            min-height: 85px;
         }
     }
 
@@ -178,10 +175,7 @@ nav {
     }
 
     .link-container {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        padding-top: 10px;
 
         a {
             color: $color-green-highlight;
